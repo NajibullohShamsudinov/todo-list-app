@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Todo List</title>
+   <link rel="stylesheet" href="style.css">
+ 
+</head>
+<body>
+    <header>
+        <h1>My Todo List</h1>
+        <p id="current-date"></p>
+    </header>
+
+    <main>
+        <section id="controls">
+            <input type="text" id="search-input" placeholder="Search tasks...">
+            <div id="task-input-container">
+                <input type="text" id="task-input" placeholder="Add a new task...">
+                <button id="add-task-button">Add</button>
+            </div>
+            <div id="filters">
+                <button id="filter-all">All</button>
+                <button id="filter-active">Active</button>
+                <button id="filter-completed">Completed</button>
+            </div>
+            <select id="sort-tasks">
+                <option value="newest">Newest First</option>
+                <option value="oldest">Oldest First</option>
+                <option value="az">Alphabetical A-Z</option>
+                <option value="za">Alphabetical Z-A</option>
+            </select>
+        </section>
+
+        <section id="todo-list-container">
+            <div id="task-list"></div>
+        </section>
+
+        <section id="statistics">
+            <p>Total Tasks: <span id="total-tasks">0</span></p>
+            <p>Completed Tasks: <span id="completed-tasks">0</span></p>
+            <button id="clear-completed">Clear Completed</button>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

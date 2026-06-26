@@ -1,0 +1,189 @@
+/* CSS Variables for consistent theming */
+:root {
+    --background-gradient: linear-gradient(135deg, #a8edea, #fed6e3);
+    --glass-bg: rgba(255, 255, 255, 0.2);
+    --glass-border: rgba(255, 255, 255, 0.4);
+    --text-color: #333;
+    --button-bg: #6c63ff;
+    --button-hover-bg: #5548c8;
+    --button-text-color: #fff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: var(--background-gradient);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Glassmorphism container */
+main {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Header styles */
+header {
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Controls section */
+#controls {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#search-input,
+#task-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    background: var(--glass-bg);
+    color: var(--text-color);
+    outline: none;
+    transition: var(--transition);
+}
+
+#search-input:focus,
+#task-input:focus {
+    border-color: var(--button-bg);
+}
+
+#task-input-container {
+    display: flex;
+    gap: 10px;
+}
+
+#add-task-button {
+    background: var(--button-bg);
+    color: var(--button-text-color);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+#add-task-button:hover {
+    background: var(--button-hover-bg);
+}
+
+/* Filter buttons */
+#filters {
+    display: flex;
+    justify-content: space-between;
+}
+
+#filters button {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+#filters button:hover {
+    background: var(--button-bg);
+    color: var(--button-text-color);
+}
+
+/* Sort dropdown */
+#sort-tasks {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    background: var(--glass-bg);
+    color: var(--text-color);
+    outline: none;
+    cursor: pointer;
+}
+
+/* Todo list container */
+#todo-list-container {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: var(--shadow);
+    min-height: 150px;
+}
+
+/* Statistics section */
+#statistics {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#statistics p {
+    font-size: 1rem;
+}
+
+#clear-completed {
+    background: var(--button-bg);
+    color: var(--button-text-color);
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+#clear-completed:hover {
+    background: var(--button-hover-bg);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    main {
+        padding: 15px;
+    }
+
+    #filters {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #statistics {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
